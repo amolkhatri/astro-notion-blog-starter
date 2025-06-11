@@ -1,5 +1,9 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
+import {notionLoader } from './lib/loader';
+import { loadEnv } from 'vite';
+
+const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
 
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -15,4 +19,18 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const notion = defineCollection({
+	loader: notionLoader({
+		notionApiKey: env.NOTION_API_KEY ?? '',
+		notionDatabaseId: env.NOTION_DATABASE_ID ?? '',
+	}),
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		description: z.string(),
+		pubDate: z.coerce.date(),
+		updatedDate: z.coerce.date().optional(),
+		heroImage: image().optional(),
+	}),
+});	
+
+export const collections = { blog, notion };
