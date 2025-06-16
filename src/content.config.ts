@@ -21,8 +21,8 @@ const blog = defineCollection({
 
 const notion = defineCollection({
 	loader: notionLoader({
-		notionApiKey: env.NOTION_API_KEY ?? '',
-		notionDatabaseId: env.NOTION_DATABASE_ID ?? '',
+		notionApiKey: "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",
+		notionDatabaseId: "1bfc8a89eb2a8062af70f17df8c29e0d",
 	}),
 	schema: ({ image }) => z.object({
 		title: z.string(),
