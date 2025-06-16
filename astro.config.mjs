@@ -7,8 +7,8 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro-notion-blog-starter.github.io',
-  base: '/demo',
+  site: 'https://amolkhatri.github.io',
+  base: '/astro-notion-blog-starter',
   integrations: [mdx(), sitemap()],
 
   adapter: node({
