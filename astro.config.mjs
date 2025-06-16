@@ -7,5 +7,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://astro-notion-blog-starter.github.io',
 	base: '/demo',
+	
 	integrations: [mdx(), sitemap()],
 });
