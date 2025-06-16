@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://notion-astro-loader.github.io',
+	site: 'https://astro-notion-blog-starter.github.io',
 	base: '/demo',
 	integrations: [mdx(), sitemap()],
 });
