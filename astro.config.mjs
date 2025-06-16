@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://notion-astro-loader.github.io',
+	base: '/demo',
 	integrations: [mdx(), sitemap()],
 });
