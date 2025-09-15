@@ -12,6 +12,8 @@ interface LoaderOptions {
 
 
 async function getNotionData(notionApiKey: string, notionDatabaseId: string, filter = {}) : Promise<any[]> {
+  console.log("Getting notion data for database:", notionDatabaseId);
+  console.log("Notion API Key:", notionApiKey);
   const notion = new Client({
     auth: notionApiKey,
   });
