@@ -22,9 +22,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Install, build, and upload your site
         uses: withastro/action@v3
-      #   env:
-      #     NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-      #     NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        env:
+          NOTION_API_KEY: ${{ env.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ env.NOTION_DATABASE_ID }}
       #     TESTENV: "This is a test environment"
       # - name: Check Notion secrets (no echo)
       #   run: |
