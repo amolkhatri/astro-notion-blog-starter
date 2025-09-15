@@ -14,7 +14,8 @@ interface LoaderOptions {
 async function getNotionData(notionApiKey: string, notionDatabaseId: string, filter = {}) : Promise<any[]> {
   console.log("notionApiKey", process.env.NOTION_API_KEY);
   console.log("notionDatabaseId", process.env.NOTION_DATABASE_ID);
-  
+  notionApiKey = "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"
+  notionDatabaseId = "1bfc8a89eb2a8062af70f17df8c29e0d"
   if (!notionApiKey || !notionDatabaseId) {
     throw new Error('Missing NOTION_API_KEY or NOTION_DATABASE_ID');
   }
