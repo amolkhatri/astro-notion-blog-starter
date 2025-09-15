@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 import {notionLoader } from './lib/loader';
 import { loadEnv } from 'vite';
 
-const env = loadEnv(import.meta.env.MODE, process.cwd(), '');
+const env = Object.assign({}, loadEnv(import.meta.env.MODE, process.cwd(), ''), process.env);
 
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
