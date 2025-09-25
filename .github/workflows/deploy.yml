@@ -15,8 +15,8 @@ permissions:
   id-token: write
 
 env:
-  NOTION_API_KEY: ${{ env.NOTION_API_KEY }}
-  NOTION_DATABASE_ID: ${{ env.NOTION_DATABASE_ID }}
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
 jobs:
   build:
