@@ -15,10 +15,8 @@ permissions:
   id-token: write
 
 env:
-  NOTION_API_KEY: ${{ vars.NOTION_API_KEY }}
-  NOTION_DATABASE_ID: ${{ vars.NOTION_DATABASE_ID }}
-  SECRET_NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
-  SECRET_NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+  NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
 
 jobs:
   build:
@@ -54,7 +52,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: Test
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
