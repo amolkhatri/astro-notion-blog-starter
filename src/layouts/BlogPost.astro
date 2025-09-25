@@ -22,35 +22,62 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.hero-image {
 				width: 100%;
+				margin: 24px 0 8px 0;
 			}
 			.hero-image img {
 				display: block;
 				margin: 0 auto;
-				border-radius: 12px;
+				border-radius: 8px;
 				box-shadow: var(--box-shadow);
 			}
 			.prose {
-				width: 720px;
+				width: 840px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 1em;
+				padding: 0.5em 1em 2em 1em;
 				color: rgb(var(--gray-dark));
 			}
+			.prose p {
+				font-size: 1.05em;
+			}
+			.prose h1 {
+				font-size: 2.25rem;
+				font-weight: 700;
+			}
+			.prose h2 {
+				font-size: 1.875rem;
+				margin-top: 1.6em;
+			}
+			.prose h3 {
+				font-size: 1.5rem;
+				margin-top: 1.2em;
+			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+				margin-bottom: 0.5em;
+				padding: 1.2em 0 0.6em 0;
+				text-align: left;
+				line-height: 1.1;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0.1em 0 0.3em 0;
+				font-size: 2.2em;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: rgba(55, 53, 47, 0.6);
+				font-size: 0.95em;
 			}
 			.last-updated-on {
-				font-style: italic;
+				font-style: normal;
+				color: rgba(55, 53, 47, 0.6);
+			}
+			@media (prefers-color-scheme: dark) {
+				.date {
+					color: #ffffff;
+				}
+				.last-updated-on {
+					color: #ffffff;
+				}
 			}
 		</style>
 	</head>

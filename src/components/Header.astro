@@ -47,7 +47,7 @@ import { SITE_TITLE } from '../consts';
 		margin: 0;
 		padding: 0 1em;
 		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		box-shadow: 0 1px 0 rgba(55, 53, 47, 0.06);
 	}
 	h2 {
 		margin: 0;
@@ -80,6 +80,18 @@ import { SITE_TITLE } from '../consts';
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+	}
+	@media (prefers-color-scheme: dark) {
+		header {
+			background: #191919;
+			box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+		}
+		nav a {
+			color: rgba(255,255,255,0.86);
+		}
+		nav a.active {
+			border-bottom-color: #8ab4ff;
 		}
 	}
 </style>
