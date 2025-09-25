@@ -17,6 +17,8 @@ permissions:
 env:
   NOTION_API_KEY: ${{ vars.NOTION_API_KEY }}
   NOTION_DATABASE_ID: ${{ vars.NOTION_DATABASE_ID }}
+  SECRET_NOTION_API_KEY: ${{ secrets.SECRET_NOTION_API_KEY }}
+  SECRET_NOTION_DATABASE_ID: ${{ secrets.SECRET_NOTION_DATABASE_ID }}
 
 jobs:
   build:
@@ -31,6 +33,8 @@ jobs:
           run: |
             echo "NOTION_API_KEY: ${NOTION_API_KEY}"
             echo "NOTION_DATABASE_ID: ${NOTION_DATABASE_ID}"
+            echo "SECRET_NOTION_API_KEY: ${SECRET_NOTION_API_KEY}"
+            echo "SECRET_NOTION_DATABASE_ID: ${SECRET_NOTION_DATABASE_ID}"
             echo "TESTENV: ${TESTENV}"
       # - name: Check Notion secrets (no echo)
       #   run: |
@@ -50,7 +54,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: Test
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
