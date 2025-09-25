@@ -11,6 +11,10 @@ let notionDatabaseId = import.meta.env.NOTION_DATABASE_ID ?? '';
 console.log(" static notionApiKey", notionApiKey);
 console.log(" static notionDatabaseId", notionDatabaseId);
 
+console.log(" env.NOTION_API_KEY", env.NOTION_API_KEY);
+console.log(" env.NOTION_DATABASE_ID", env.NOTION_DATABASE_ID);
+
+
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
 	loader: glob({ base: './src/content/blog', pattern: '**/*.{md,mdx}' }),
